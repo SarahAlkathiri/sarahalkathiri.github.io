@@ -277,7 +277,7 @@ function safeUrl(u){try{const x=new URL(u);return(x.protocol==='https:'||x.proto
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
 function hash(s){let h=7;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h}
 function artCover(p){
-  // generated cover per category, deterministic from the id
+  // cover art per category
   let h=hash(p.id||'x');const r=()=>((h=(h*1103515245+12345)>>>0)%1000)/1000;
   const ns='http://www.w3.org/2000/svg',s=document.createElementNS(ns,'svg');s.setAttribute('viewBox','0 0 320 180');s.setAttribute('preserveAspectRatio','xMidYMid slice');s.setAttribute('aria-hidden','true');
   const add=(n,a)=>{const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);s.appendChild(e);return e};
