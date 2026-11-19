@@ -177,7 +177,7 @@ footer{color:var(--muted);font-size:.85rem;padding:26px 0 40px;border-top:1px so
       <div class="eyebrow">DATA ANALYSIS · MACHINE LEARNING · AI</div>
       <h1 id="pName">اسمك هنا</h1>
       <p class="role" id="pRole">محلّلة بيانات · ماجستير في الذكاء الاصطناعي</p>
-      <p class="bio" id="pBio">أحوّل البيانات الخام إلى قرارات واضحة: من جداول Excel ولوحات المؤشرات، إلى التحليل بـ Python، وصولاً إلى بناء نماذج تعلّم الآلة وتقييمها.</p>
+      <p class="bio" id="pBio">أحوّل البيانات الخام إلى قرارات واضحة: من جداول Excel ولوحات Power BI، وصولاً إلى بناء نماذج تعلّم الآلة وتقييمها.</p>
       <div class="cta">
         <a class="btn solid" href="#work">استعرض الأعمال</a>
         <a class="btn ghost" href="#contact">تواصل معي</a>
@@ -193,7 +193,7 @@ footer{color:var(--muted);font-size:.85rem;padding:26px 0 40px;border-top:1px so
   <div class="stats" aria-label="ملخص الأعمال">
     <div class="stat"><div class="n" id="sAll">0</div><div class="l">مشروع منشور</div></div>
     <div class="stat"><div class="n" id="sMl">0</div><div class="l">نموذج تعلّم آلة وذكاء اصطناعي</div></div>
-    <div class="stat"><div class="n" id="sPy">0</div><div class="l">تحليل بـ Python</div></div>
+    <div class="stat"><div class="n" id="sPy">0</div><div class="l">لوحة Power BI</div></div>
     <div class="stat"><div class="n" id="sXl">0</div><div class="l">مشروع Excel ولوحات</div></div>
   </div>
 
@@ -210,11 +210,11 @@ footer{color:var(--muted);font-size:.85rem;padding:26px 0 40px;border-top:1px so
     <div class="head"><div><h2>المهارات والأدوات</h2><p>ثلاث طبقات أعمل عليها، من الجدول إلى النموذج.</p></div></div>
     <div class="skills">
       <div class="skill"><h3>تحليل البيانات</h3><p>تنظيف البيانات، الجداول المحورية، ولوحات مؤشرات تخدم القرار.</p>
-        <div class="chips"><span class="chip">Excel</span><span class="chip">Power Query</span><span class="chip">Pivot Tables</span><span class="chip">Power BI</span><span class="chip">SQL</span></div></div>
-      <div class="skill"><h3>Python</h3><p>تحليل استكشافي، معالجة، وتصوير البيانات في دفاتر Jupyter.</p>
-        <div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Jupyter</span></div></div>
+        <div class="chips"><span class="chip">Excel</span><span class="chip">Power Query</span><span class="chip">Pivot Tables</span><span class="chip">XLOOKUP</span><span class="chip">SQL</span></div></div>
+      <div class="skill"><h3>Power BI</h3><p>نمذجة البيانات وبناء لوحات تفاعلية تعرض المؤشرات لصنّاع القرار.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">Data Modeling</span><span class="chip">Power BI Service</span></div></div>
       <div class="skill"><h3>تعلّم الآلة والذكاء الاصطناعي</h3><p>بناء النماذج وتدريبها وتقييمها، من الانحدار إلى الشبكات العصبية.</p>
-        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Hugging Face</span></div></div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Hugging Face</span></div></div>
     </div>
   </section>
 
@@ -266,7 +266,7 @@ if(reduce){for(let i=0;i<300;i++)step();draw()}else requestAnimationFrame(tick);
 new ResizeObserver(()=>{size();draw()}).observe(cv);
 
 /* ---------- data layer ---------- */
-const CATS={ml:'تعلّم الآلة',ai:'ذكاء اصطناعي',python:'Python',excel:'Excel ولوحات'};
+const CATS={ml:'تعلّم الآلة',ai:'ذكاء اصطناعي',powerbi:'Power BI',excel:'Excel ولوحات'};
 const $=id=>document.getElementById(id);
 let db=null,assets=null,user=null,canEdit=false,projects=[],filter='all',profile={},editing=null;
 
@@ -285,7 +285,7 @@ function artCover(p){
   for(let i=1;i<8;i++)add('line',{x1:i*40,y1:0,x2:i*40,y2:180,stroke:'rgba(255,255,255,.04)'});
   const c=p.category;
   if(c==='excel'){for(let i=0;i<9;i++){const hh=30+r()*110;add('rect',{x:22+i*32,y:160-hh,width:20,height:hh,rx:3,fill:i%3?'rgba(201,164,92,.35)':'#C9A45C'})}}
-  else if(c==='python'){let d='M10 '+(120);for(let i=1;i<=30;i++)d+=' L'+(10+i*10)+' '+(40+r()*100);add('path',{d,fill:'none',stroke:'#C9A45C','stroke-width':2});for(let i=0;i<40;i++)add('circle',{cx:r()*320,cy:r()*180,r:1.6,fill:'rgba(232,211,160,.35)'})}
+  else if(c==='powerbi'){let d='M10 '+(120);for(let i=1;i<=30;i++)d+=' L'+(10+i*10)+' '+(40+r()*100);add('path',{d,fill:'none',stroke:'#C9A45C','stroke-width':2});for(let i=0;i<40;i++)add('circle',{cx:r()*320,cy:r()*180,r:1.6,fill:'rgba(232,211,160,.35)'})}
   else if(c==='ai'){const L=[3,5,5,2],nodes=[];L.forEach((n,li)=>{nodes[li]=[];for(let j=0;j<n;j++){nodes[li].push([50+li*73,90+(j-(n-1)/2)*30])}});for(let li=0;li<L.length-1;li++)for(const a of nodes[li])for(const bb of nodes[li+1])add('line',{x1:a[0],y1:a[1],x2:bb[0],y2:bb[1],stroke:'rgba(201,164,92,'+(.1+r()*.35)+')'});nodes.flat().forEach(n=>add('circle',{cx:n[0],cy:n[1],r:6,fill:'#17151A',stroke:'#C9A45C','stroke-width':1.6}))}
   else{const k=.3+r()*.4;for(let i=0;i<55;i++){const x=r(),y=k*x+.2+(r()-.5)*.25;add('circle',{cx:20+x*280,cy:170-y*170,r:2.6,fill:r()>.5?'#E8D3A0':'rgba(201,164,92,.5)'})}add('line',{x1:20,y1:170-.2*170,x2:300,y2:170-(k+.2)*170,stroke:'#C9A45C','stroke-width':2.2})}
   return s}
@@ -295,7 +295,7 @@ function render(){
   const list=projects.filter(p=>filter==='all'||p.category===filter);
   $('sAll').textContent=projects.length;
   $('sMl').textContent=projects.filter(p=>p.category==='ml'||p.category==='ai').length;
-  $('sPy').textContent=projects.filter(p=>p.category==='python').length;
+  $('sPy').textContent=projects.filter(p=>p.category==='powerbi').length;
   $('sXl').textContent=projects.filter(p=>p.category==='excel').length;
   document.querySelectorAll('.stat').forEach(x=>{x.hidden=x.querySelector('.n').textContent==='0'});
   if(!list.length){const e=el('div','empty',projects.length?'لا توجد أعمال في هذا المجال بعد.':(canEdit?'لا توجد أعمال بعد. اضغط «إضافة عمل» لرفع أول مشروع.':'لا توجد أعمال منشورة بعد.'));e.style.gridColumn='1/-1';g.appendChild(e);return}
