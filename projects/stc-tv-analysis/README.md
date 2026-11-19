@@ -1,42 +1,41 @@
-# stc tv — Viewer Behaviour Analysis | تحليل سلوك مشاهدي stc tv
+# stc tv: who's actually watching?
 
 ![cover](images/cover.png)
 
-**Goal:** understand how stc tv users watch, by **program class** (movie / series) and by **video quality** (SD / HD), and turn it into content recommendations.
+I wanted to understand how people use stc tv: who watches movies vs series, who watches in HD vs SD, and whether those groups behave differently.
 
-**Data:** 1,048,575 viewing sessions · 11,578 users · 8,013 programs · Mar 2017 – Apr 2018.
-**Tools:** Python, Pandas, NumPy, Matplotlib, Google Colab.
+The data has about **1M viewing sessions** from **11,578 users** between March 2017 and April 2018. I did everything in Python (pandas + matplotlib) on Google Colab.
 
-👉 [View the notebook](stc_tv_analysis.ipynb) · [Open in Colab](https://colab.research.google.com/github/SarahAlkathiri/sarahalkathiri.github.io/blob/main/projects/stc-tv-analysis/stc_tv_analysis.ipynb)
+📓 [Notebook](stc_tv_analysis.ipynb) · [Open in Colab](https://colab.research.google.com/github/SarahAlkathiri/sarahalkathiri.github.io/blob/main/projects/stc-tv-analysis/stc_tv_analysis.ipynb)
 
-## Key findings
-| | |
-|---|---|
-| **Movies reach everyone, series hold attention** | 98% of users watched movies, only 34% watched series, yet series are **71% of watch hours**. |
-| **Movie viewing is mostly browsing** | Median movie session is **1.3 min** vs **18 min** for a series episode. |
-| **A small group drives the platform** | *Series fans* are **14% of users** but generate **69% of watch hours**; *movie fans* are 79% of users with a median of 9 minutes in total. |
-| **Quality depends on the catalogue, not the user** | 97% of programs exist in one quality only. 68% of movie sessions are HD vs **13%** of series sessions. |
-| **The most loyal viewers watch in SD** | SD viewers (14% of users) average **79 hours**; HD viewers (53%) average 1.8 hours and watch almost only movies. |
+## What I found
+
+**Almost everyone tries movies, but series are what keep people watching.** 98% of users watched at least one movie, while only 34% watched series. Still, series make up 71% of all watch hours.
+
+**A lot of movie viewing is just browsing.** The median movie session is 1.3 minutes. For series it's 18 minutes.
+
+**A small group carries the platform.** When I split users by what they prefer, "series fans" were only 14% of users but 69% of watch hours. "Movie fans" were 79% of users, and half of them watched less than 9 minutes in total.
 
 ![Movies vs series](images/fig1.png)
 ![Segments](images/fig2.png)
+
+**HD vs SD isn't really the user's choice.** I expected people to pick the quality, but 97% of programs only exist in one quality. 68% of movie sessions are HD, while only 13% of series sessions are.
+
+**So the most loyal viewers end up watching in SD.** The SD group (14% of users) averages 79 hours of watching. The HD group (53%) averages under 2 hours, and almost all of it is movies.
+
 ![HD vs SD by class](images/fig6.png)
 ![Who watches in HD vs SD](images/fig8.png)
 
-## Recommendations
-1. **Upgrade the series catalogue to HD**: the most engaged viewers are stuck in SD because the content itself is SD.
-2. **Turn movie browsers into viewers**: personalised recommendations, shorter trailers and "continue watching" for the 79% who leave within minutes.
-3. **Invest in kids' animation**: the top genre across every segment.
+## What I'd recommend
+1. Bring the series catalogue to HD, since the most engaged viewers are the ones stuck in SD.
+2. Work on the people who open a movie and leave within a minute or two: better recommendations, shorter trailers, "continue watching".
+3. Keep investing in kids' animation. It's the top genre in every group.
 
-## Method
-1. Load, check shape, find missing values (before type conversion, so they aren't hidden as `"nan"`), clean and describe the numeric columns.
-2. Exclude sessions longer than 4 hours (0.7%) from duration metrics only.
-3. Segment users by the share of their watch time spent on movies (≤30% / 30–70% / ≥70%) and by their share of HD sessions (≤20% / 20–80% / ≥80%).
-
-## Data notes
-- The dataset was provided as part of an stc tv analytics task and is **not included** in this repository.
-- The file has exactly 1,048,575 rows (Excel's row limit), so it is likely a truncated extract.
-- Some program names have missing letters and digits in the source data (e.g. "The Amazing pider-Man").
+## A few notes on the data
+- I can't share the dataset here; it was provided for this task.
+- The file has exactly 1,048,575 rows, which is Excel's row limit, so it's probably cut from a bigger export.
+- Some program names are missing letters (e.g. "The Amazing pider-Man"), so I kept titles as they are.
+- I left out sessions longer than 4 hours (0.7%) when calculating durations. One was 17 days long, which is clearly a TV left on.
 
 ---
-**Sarah Alkathiri** · [Portfolio](https://sarahalkathiri.github.io)
+Sarah Alkathiri · [Portfolio](https://sarahalkathiri.github.io)
