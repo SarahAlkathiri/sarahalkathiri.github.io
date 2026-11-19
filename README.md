@@ -1,2 +1,5 @@
-# sarahalkathiri.github.io
-Data Analysis, Machine Learning &amp; NLP
+# Sarah Alkathiri — Portfolio
+
+Data Analysis · Machine Learning · NLP
+
+Live site: https://sarahalkathiri.github.io
