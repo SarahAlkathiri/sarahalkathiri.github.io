@@ -2,7 +2,7 @@
 
 ![dashboard](dashboard_preview.png)
 
-After looking at property **sale** prices in my [real estate project](../saudi-real-estate), I wanted the other side of the market: how much people actually pay in rent, and how that changed. I built this one fully in Excel.
+I wanted to see how much people actually pay in rent across Saudi Arabia, and how that changed over the years. I built this one fully in Excel.
 
 📊 [Download the workbook](Saudi_Rental_Dashboard.xlsx)
 
