@@ -2,6 +2,8 @@
 
 ![dashboard](dashboard.png)
 
+📊 [Download the Power BI file (.pbix)](stc_tv_dashboard.pbix?raw=true)
+
 I already analyzed this data in Python ([stc tv analysis](../stc-tv-analysis)), so I wanted to see the same story in one interactive page that anyone can filter.
 
 The data is about **1M viewing sessions** from **11,578 users** (March 2017 to April 2018).
